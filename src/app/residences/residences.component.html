@@ -1,0 +1,32 @@
+Name : <input type="text" [value]="name" (keyup)="setName(x.value)" #x /> :
+{{ name }}
+<br />
+Recherche par Name (avec NgModel):
+<input type="text" [(ngModel)]="name2" /> {{ name2 }}
+<br />
+<ul>
+  <div *ngFor="let r of listResidences">
+    <li *ngIf="r.name == name2 || name2 == ''">
+      <!---interpolation -->
+      {{ r.id }} - {{ r.name }}
+      <a [routerLink]="['/apartments', r.id]">Détails </a>
+      <!--event binding--->
+      <button (click)="getApartments(r.id)">Show Apartments</button>
+      Recherche par Surface (avec NgModel):
+      <input type="text" [(ngModel)]="surface" /> {{ surface }}
+
+      <ul *ngFor="let a of list">
+        <li *ngIf="a.surface <= surface || surface == null && a.residence.id == r.id ">
+          App Number = {{ a.appartNum }}  ****  id = {{ a.id }} - sur = {{ a.surface }}
+          <button (click)="add_tolist_like_app(a.id)">like app</button>
+        </li>
+      </ul>
+    </li>
+  </div>
+</ul>
+
+
+<button (click)="getLiked()"> liked app </button>
+<ul *ngFor="let b of showLikedApp"> 
+    id = {{ b.id }} - sur = {{ b.surface }} 
+</ul>

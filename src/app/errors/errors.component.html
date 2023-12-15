@@ -1,0 +1,7 @@
+
+<div *ngIf="errors">
+  <small class="error" *ngIf="errors['required']"> {{ errorMsgRequired }}</small>
+  <small class="error" *ngIf="errors['minlength']">{{ errorMsgMinLength }}</small>
+  <small class="error" *ngIf="errors['maxlength']">{{ errorMsgMaxLength }}</small>
+</div>
+

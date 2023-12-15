@@ -1,0 +1,97 @@
+<p>update-apartment works!</p>
+
+<form [formGroup]="myForm">
+    <label for="appNumber">App number:</label>
+    <input formControlName="appNumber" type="number">
+    <div *ngIf="myForm.get('appNumber').touched && myForm.get('appNumber').invalid">
+        <small class="error" *ngIf="myForm.get('appNumber').errors['required']">App number is required.</small>
+        <small class="error" *ngIf="myForm.get('appNumber').errors['pattern']">Invalid app number, only digits allowed.</small>
+    </div>
+    <br><br>
+
+
+
+    <label for="floorNumber">Floor number:</label>
+    <input formControlName="floorApp">
+    <div *ngIf="myForm.get('floorApp').touched && myForm.get('floorApp').invalid">
+        <small class="error" *ngIf="myForm.get('floorApp').errors['required']">Floor number is required.</small>
+    </div>
+    <br><br>
+
+    <label for="surface">Surface:</label>
+    <input formControlName="surface">
+    <div *ngIf="myForm.get('surface').touched && myForm.get('surface').invalid">
+        <small class="error" *ngIf="myForm.get('surface').errors['required']"> Surface is required.</small>
+    </div>
+    <br><br>
+
+    
+    <label for="terrace">Terrace:</label>
+  <label>
+    <input type="radio" formControlName="terrace" value="yes"> Yes
+  </label>
+
+  <label>
+    <input type="radio" formControlName="terrace" value="no"> No
+  </label>
+
+  <div *ngIf="myForm.get('terrace').value == 'Yes' " > 
+
+    <label for="surfaceTerrace">Surface terrace:</label>
+    <input formControlName="surfaceTerrace">
+    
+    <div *ngIf="myForm.get('surfaceTerrace').touched && myForm.get('surfaceTerrace').invalid">
+
+        <small class="error" *ngIf="myForm.get('surfaceTerrace').errors['required']"> surface Terrace is required.</small>
+    </div>
+    <br><br>
+
+
+  </div>
+
+<div *ngIf="myForm.get('terrace').touched && myForm.get('terrace').invalid">
+  <small class="error" *ngIf="myForm.get('terrace').errors['required']">Choosing an option for terrace is required.</small>
+</div>
+    <br><br>
+
+
+        
+    <label for="category">category:</label>
+  <label>
+    <input type="radio" formControlName="category" value="1"> S+1
+  </label>
+
+  <label>
+    <input type="radio" formControlName="category" value="2"> S+2
+  </label>
+  
+  <label>
+    <input type="radio" formControlName="category" value="3"> s+3
+  </label>
+
+
+
+<div *ngIf="myForm.get('category').touched && myForm.get('category').invalid">
+  <small class="error" *ngIf="myForm.get('category').errors['required']">Choosing an option for category is required.</small>
+</div>
+    <br><br>
+
+
+    
+    <label for="description">Description:</label>
+    <input formControlName="description" type="text">
+    <div *ngIf="myForm.get('description').touched && myForm.get('description').invalid">
+        <small class="error" *ngIf="myForm.get('description').errors['required']"> description is required.</small>
+    </div>
+    <br><br>
+
+    <label for="residence">Residence:</label>
+    <input formControlName="residence" type="number">
+    <div *ngIf="myForm.get('residence').touched && myForm.get('residence').invalid">
+        <small class="error" *ngIf="myForm.get('residence').errors['required']"> residence is required.</small>
+    </div>
+    <br><br>
+
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+
+</form>

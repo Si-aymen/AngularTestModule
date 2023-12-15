@@ -1,0 +1,68 @@
+/* Overall styling for input elements */
+input[type="text"] {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Styling for the list elements */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #f9f9f9;
+    margin: 8px 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Styling for buttons */
+  button {
+    background-color: #008cba;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  button:hover {
+    background-color: #005f73;
+  }
+  
+  /* Styling for links */
+  a {
+    color: #008cba;
+    text-decoration: none;
+    padding: 2px 5px;
+  }
+  
+  a:hover {
+    color: #005f73;
+  }
+  
+  /* Specific styles for the residence list items */
+  .div-residence {
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for the details and button section of each residence */
+  .details-button-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Styles for the 'like app' section */
+  .like-app-section {
+    margin-top: 15px;
+    background-color: #e8f4f8;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  

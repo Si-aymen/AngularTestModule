@@ -1,0 +1,28 @@
+<p>list-apartment works!</p>
+<ul>
+  <li *ngFor="let a of apartments">
+    App Number = {{ a.appartNum }}  ****  id = {{ a.id }} - sur = {{ a.surface }}
+    <button (click)="onDelete(a.id)">Delete</button>
+    <button (click)="onUpdate(a.id)">Update</button>
+    <button (click)="select = a ">select</button>
+    
+
+    <div *ngIf ="select === a">
+        <app-update-apartment> </app-update-apartment>
+    </div>
+    
+  </li>
+
+  <button (click)="Add()">Add Apartment</button>
+
+  <div *ngIf ="addApartmentMode">
+    <app-form-appartment> </app-form-appartment>
+  </div>
+
+
+
+
+
+
+
+</ul>

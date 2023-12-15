@@ -1,0 +1,47 @@
+<p>form-residence works!</p>
+<br>
+<form [formGroup]="Form"> 
+
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" type="text">
+
+    <div *ngIf="Form.controls['name'].touched && Form.controls['name'].invalid">
+
+        <app-errors [errors]="Form.controls['name'].errors"
+                    errorMsgMinLength="Le nom doit contenir au moins 2 caractères."
+                    errorMsgMaxLength="Le nom ne peut pas dépasser 50 caractères.">
+        </app-errors>
+
+    </div>
+
+    <br><br>
+
+    <label for="Adress">Adress :</label> 
+    <input id="Adress" formControlName="Adress" type="text">
+    <div *ngIf="Form.controls['Adress'].touched && Form.controls['Adress'].invalid">
+
+
+    <app-errors 
+        [errors]="Form.get('Adress').errors"
+        errorMsgMinLength="Le nom doit contenir au moins 2 caractères."
+        errorMsgMaxLength="Le nom ne peut pas dépasser 50 caractères." >
+    </app-errors>
+    </div>
+    <br><br>
+
+    <label for="imageInput">Image:</label>
+    <input id="imageInput" type="file" (change)="onImageUpload($event)" formControlName="imageInput">
+
+    <div *ngIf="Form.controls['imageInput'].touched && Form.controls['imageInput'].invalid">
+
+
+    <app-errors 
+        [errors]="Form.get('imageInput').errors" 
+>
+    </app-errors>
+    </div>
+    <br><br>
+    
+    <button type="submit" [disabled]="Form.invalid">Submit</button> 
+
+</form>

@@ -1,0 +1,33 @@
+
+<!---One way databinding : interpolation : TS ->HTML -->
+{{ title }}
+<!---One way databinding: event binding -HTML->TS-->
+<button (click)="f('a')">Save</button>
+<br>
+
+<app-test [prop1]="title"> </app-test>
+
+
+<input value={{title}}> <br>
+<input value="title"> <br>
+
+<!--- One way databinding: Property binding: TS -> HTML-->
+<input [value]="title">
+<br>
+<div [style]="style1">Bonjour</div>
+
+<!---2- définir le lien --->
+<a [routerLink]="['home']">Residences</a>
+<br>
+
+<a [routerLink]="['apartments']">Apartments</a>
+<br>
+
+
+<a [routerLink]="['Add']">Form appartment</a>
+<br>
+
+<a [routerLink]="['AddRes']">Form residence</a>
+<br>
+<!---3-Où charger la vue du composant correspondant au path actuel-->
+<router-outlet></router-outlet>
